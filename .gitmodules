@@ -1,0 +1,15 @@
+[submodule "SubModules/NP.DependencyInjection"]
+	path = SubModules/NP.DependencyInjection
+	url = https://github.com/npolyak/NP.DependencyInjection.git
+[submodule "SubModules/NP.IoC.CommonImplementations"]
+	path = SubModules/NP.IoC.CommonImplementations
+	url = https://github.com/npolyak/NP.IoC.CommonImplementations
+[submodule "SubModules/NP.IoC"]
+	path = SubModules/NP.IoC
+	url = https://github.com/npolyak/NP.IoC
+[submodule "SubModules/NP.Protobuf"]
+	path = SubModules/NP.Protobuf
+	url = https://github.com/npolyak/NP.Protobuf
+[submodule "SubModules/NP.Utilities"]
+	path = SubModules/NP.Utilities
+	url = https://github.com/npolyak/NP.Utilities

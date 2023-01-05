@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/type.proto";
+import "SubModules/NP.Protobuf/src/BasicMessages.proto";
+
+package nP.grpc.serverClientCommon;
+
+service RelayService
+{
+	rpc Subscribe(nP.protobuf.ShortMsg) returns (stream nP.protobuf.FullMsg) {}
+	rpc Broadcast(nP.protobuf.FullMsg) returns (nP.protobuf.ShortMsg) {}
+}

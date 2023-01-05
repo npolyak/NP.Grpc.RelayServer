@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NP.Grpc.ServerClientCommon/bin/Debug/net6.0
+/NP.Grpc.ServerClientCommon/obj
+/Plugins/NP.RelayClient/bin/Debug/net6.0
+/Plugins/NP.RelayClient/obj
+/Plugins/NP.RelayServer/bin/Debug/net6.0
+/Plugins/NP.RelayServer/obj
+/Prototypes/SimpleBroadcastSubscriptionTest/.vs
+/Prototypes/SimpleBroadcastSubscriptionTest/bin/Debug/net6.0
+/Prototypes/SimpleBroadcastSubscriptionTest/obj
