@@ -38,7 +38,7 @@ public class RelayClient : IRelayClient
         return await _client.BroadcastAsync(broadcastMsg);
     }
 
-    private async IAsyncEnumerable<FullMsg> SubscribeImpl(System.Enum topic)
+    public async IAsyncEnumerable<FullMsg> GetResponseStream(System.Enum topic)
     {
         ShortMsg subscribeMsg = topic.ToShortMsg();
 
@@ -54,7 +54,7 @@ public class RelayClient : IRelayClient
 
     public IObservable<FullMsg> Subscribe(System.Enum topic)
     {
-        return SubscribeImpl(topic).ToObservable();
+        return GetResponseStream(topic).ToObservable();
     }
 
     public IObservable<T> Subscribe<T>(System.Enum topic)
