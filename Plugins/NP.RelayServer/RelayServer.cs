@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
 using NP.DependencyInjection.Attributes;
-using NP.Grpc.ServerClientCommon;
+using NP.Grpc.CommonRelayInterfaces;
 using NP.Protobuf;
 
 namespace NP.Grpc.RelayServer

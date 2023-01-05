@@ -1,10 +1,10 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
 using Grpc.Core;
-using NP.Grpc.ServerClientCommon;
+using NP.Grpc.CommonRelayInterfaces;
 using NP.Protobuf;
 using NP.DependencyInjection.Attributes;
-using static NP.Grpc.ServerClientCommon.RelayService;
+using static NP.Grpc.CommonRelayInterfaces.RelayService;
 using System.Reactive.Linq;
 
 namespace NP.RelayServer;

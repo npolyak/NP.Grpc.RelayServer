@@ -2,7 +2,7 @@
 using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
 
-namespace NP.Grpc.ServerClientCommon;
+namespace NP.Grpc.CommonRelayInterfaces;
 
 public interface IRelayClient
 {

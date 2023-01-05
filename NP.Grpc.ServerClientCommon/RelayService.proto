@@ -6,7 +6,7 @@ import "google/protobuf/any.proto";
 import "google/protobuf/type.proto";
 import "SubModules/NP.Protobuf/src/BasicMessages.proto";
 
-package nP.grpc.serverClientCommon;
+package nP.grpc.commonRelayInterfaces;
 
 service RelayService
 {

@@ -1,4 +1,4 @@
-﻿namespace NP.Grpc.ServerClientCommon;
+﻿namespace NP.Grpc.CommonRelayInterfaces;
 
 public interface IRelayServer
 {
