@@ -10,7 +10,7 @@
 		<None Remove="RelayService.proto" />
 	</ItemGroup>
 	<ItemGroup>
-		<Protobuf Include="NP.Grpc.ServerClientCommon/RelayService.proto" GrpcServices="Both" ProtoRoot=".." />
+		<Protobuf Include="../NP.Grpc.ServerClientCommon/RelayService.proto" GrpcServices="Both" ProtoRoot=".." />
 	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
