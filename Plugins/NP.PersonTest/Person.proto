@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+
+package NP.PersonTest;
+
+message Person
+{
+    string Name = 1;
+    int32 Age = 2;
+}

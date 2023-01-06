@@ -17,3 +17,15 @@
 /Prototypes/RelayServerTest/obj
 /src/bin/Debug/net6.0
 /src/obj
+/Plugins/NP.GrpcConfig/bin/Debug/net6.0
+/Plugins/NP.GrpcConfig/obj
+/Plugins/NP.PersonTest/bin/Debug/net6.0
+/Plugins/NP.PersonTest/obj
+/Plugins/NP.TestTopics/bin/Debug/net6.0
+/Plugins/NP.TestTopics/obj
+/Prototypes/BroadcastClientTest/.vs
+/Prototypes/BroadcastClientTest/bin/Debug/net6.0
+/Prototypes/BroadcastClientTest/obj
+/Prototypes/SubscribingClientTest/.vs
+/Prototypes/SubscribingClientTest/bin/Debug/net6.0
+/Prototypes/SubscribingClientTest/obj

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Person.proto" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Protobuf Include="Person.proto" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
+		<ProjectReference Include="..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
+		<PackageReference Include="Grpc.Tools" Version="2.51.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\BroadcastClientTest\\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+	</Target>-->
+</Project>

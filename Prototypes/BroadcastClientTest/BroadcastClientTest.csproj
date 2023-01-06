@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Plugins\NP.PersonTest\NP.PersonTest.csproj" />
+    <ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
     <ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
     <ProjectReference Include="..\..\SubModules\NP.IoC\src\NP.IoCy.csproj" />
   </ItemGroup>

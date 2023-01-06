@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
+		<ProjectReference Include="..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+	</Target>
+</Project>

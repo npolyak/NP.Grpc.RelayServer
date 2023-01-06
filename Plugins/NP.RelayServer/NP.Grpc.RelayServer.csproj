@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
-    <ProjectReference Include="..\..\SubModules\NP.IoC\src\NP.IoCy.csproj" />
+    <ProjectReference Include="..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
   </ItemGroup>
-
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+	</Target>
 </Project>

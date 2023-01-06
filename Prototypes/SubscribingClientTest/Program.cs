@@ -1,6 +1,9 @@
 ﻿using NP.Grpc.CommonRelayInterfaces;
 using NP.IoCy;
+using NP.PersonTest;
 using NP.Protobuf;
+using NP.TestTopics;
+using System;
 
 namespace SimpleBroadcastSubscriptionTest
 {
@@ -8,7 +11,7 @@ namespace SimpleBroadcastSubscriptionTest
     {
         static void Main(string[] args)
         {
-            var containerBuilder = new ContainerBuilder<Enum>();
+            var containerBuilder = new ContainerBuilder<System.Enum>();
 
             containerBuilder.RegisterMultiCell(typeof(Enum), IoCKeys.Topics);
 
@@ -16,9 +19,16 @@ namespace SimpleBroadcastSubscriptionTest
 
             var container = containerBuilder.Build();
 
-            IRelayServer relayServer = container.Resolve<IRelayServer>();
+            IRelayClient relayClient = container.Resolve<IRelayClient>();
+
+            relayClient.Subscribe<Person>(TestTopics.PersonTopic).Subscribe(OnPersonRecordArrived);
 
             Console.ReadLine();
+        }
+
+        private static void OnPersonRecordArrived(Person p)
+        {
+            Console.WriteLine(p.ToString());
         }
     }
 }

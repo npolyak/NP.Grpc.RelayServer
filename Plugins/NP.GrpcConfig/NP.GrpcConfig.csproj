@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\BroadcastClientTest\\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+	</Target>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
+	  <ProjectReference Include="..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
+	</ItemGroup>
+</Project>
