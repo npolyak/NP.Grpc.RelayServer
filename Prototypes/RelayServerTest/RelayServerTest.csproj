@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
-    <ProjectReference Include="..\..\SubModules\NP.IoC\src\NP.IoCy.csproj" />
+    <ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
   </ItemGroup>
 
 </Project>
