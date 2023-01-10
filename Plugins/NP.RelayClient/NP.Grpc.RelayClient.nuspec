@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>NP.Grpc.RelayClient</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>NP.Grpc.RelayClient</title>
     <authors>Nick Polyak, Ph. D.</authors>
     <license type="expression">MIT</license>
@@ -16,6 +16,7 @@
    <dependencies>
         <dependency id="System.Linq.Async" version="6.0.1"/>
         <dependency id="System.Reactive" version="5.0.0"/>
+        <dependency id="NP.Grpc.CommonRelayInterfaces" version="1.0.0"/>
         <dependency id="NP.DependencyInjection" version="1.0.6"/>
     </dependencies>    
   </metadata>
