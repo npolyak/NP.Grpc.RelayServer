@@ -29,3 +29,4 @@
 /Prototypes/SubscribingClientTest/.vs
 /Prototypes/SubscribingClientTest/bin/Debug/net6.0
 /Prototypes/SubscribingClientTest/obj
+*.nupkg

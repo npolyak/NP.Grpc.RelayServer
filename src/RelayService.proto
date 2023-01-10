@@ -4,12 +4,27 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/any.proto";
 import "google/protobuf/type.proto";
-import "SubModules/NP.Protobuf/src/BasicMessages.proto";
 
 package nP.grpc.commonRelayInterfaces;
 
 service RelayService
 {
-	rpc Subscribe(nP.protobuf.ShortMsg) returns (stream nP.protobuf.FullMsg) {}
-	rpc Broadcast(nP.protobuf.FullMsg) returns (nP.protobuf.ShortMsg) {}
+	rpc Subscribe(ShortMsg) returns (stream FullMsg) {}
+	rpc Broadcast(FullMsg) returns (ShortMsg) {}
+}
+
+message ShortMsg
+{    
+	google.protobuf.Timestamp msgSentTime = 1;
+
+	google.protobuf.EnumValue topic = 3;
+
+	string errorMessage = 4;
+}
+
+message FullMsg
+{
+	ShortMsg metadata = 1;
+
+	google.protobuf.Any message = 2;
 }

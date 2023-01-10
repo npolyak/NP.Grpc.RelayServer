@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NP.Grpc.RelayClient</id>
+    <version>1.0.1</version>
+    <title>NP.Grpc.RelayClient</title>
+    <authors>Nick Polyak, Ph. D.</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/npolyak/NP.Protobuf</projectUrl>
+    <description>relay client plugin functionality</description>
+    <summary>relay client plugin functionality</summary>
+    <releaseNotes>relay client plugin functionality</releaseNotes>
+    <copyright>Nick Polyak 2022</copyright>
+    <tags>NP.Grpc.RelayClient</tags>
+   <dependencies>
+        <dependency id="System.Linq.Async" version="6.0.1"/>
+        <dependency id="System.Reactive" version="5.0.0"/>
+        <dependency id="NP.DependencyInjection" version="1.0.6"/>
+    </dependencies>    
+  </metadata>
+</package>
