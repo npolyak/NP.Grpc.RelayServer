@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NP.Grpc.RelayServer</id>
+    <version>1.0.0</version>
+    <title>NP.Grpc.RelayServer</title>
+    <authors>Nick Polyak, Ph. D.</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/npolyak/NP.Grpc.RelayServer</projectUrl>
+    <description>Relay server implementation plugin</description>
+    <summary>Relay server implementation plugin</summary>
+    <releaseNotes>Relay server implementation plugin</releaseNotes>
+    <copyright>Nick Polyak 2022</copyright>
+    <tags>NP.Grpc.RelayServer</tags>
+    <dependencies>
+        <dependency id="NP.Grpc.CommonRelayInterfaces" version="1.0.0"/>
+        <dependency id="NP.DependencyInjection" version="1.0.6"/>
+    </dependencies>
+  </metadata>
+</package>
