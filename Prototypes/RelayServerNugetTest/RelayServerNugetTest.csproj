@@ -20,7 +20,7 @@
 
 
 	<Target Name="CopyPlugin" AfterTargets="Build">
-		<Copy SourceFiles="@(PackageDllFiles)" DestinationFolder="$(TargetDir)\Bla\blabla\%(RecursiveDir)"  />
+		<Copy SourceFiles="@(PackageDllFiles)" DestinationFolder="$(TargetDir)\Bla\blabla\%(RecursiveDir)" />
 		<!--
 		<Error Text="Called from the IDE! $(PkgNP_Grpc_RelayServer)" />
 		-->
