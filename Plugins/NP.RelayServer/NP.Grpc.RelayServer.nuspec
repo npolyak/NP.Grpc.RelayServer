@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>NP.Grpc.RelayServer</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>NP.Grpc.RelayServer</title>
     <authors>Nick Polyak, Ph. D.</authors>
     <license type="expression">MIT</license>
@@ -18,4 +18,7 @@
         <dependency id="NP.DependencyInjection" version="1.0.6"/>
     </dependencies>
   </metadata>
+  <files>
+      <file src="bin/Debug/net6.0/NP.Grpc.RelayServer.deps.json" target=""/>
+  </files>
 </package>

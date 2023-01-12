@@ -30,3 +30,12 @@
 /Prototypes/SubscribingClientTest/bin/Debug/net6.0
 /Prototypes/SubscribingClientTest/obj
 *.nupkg
+/Plugins/NP.RelayClient/bin/Release/net6.0
+/Plugins/NP.RelayServer/bin/Release
+/Prototypes/BroadcastClientTest/bin
+/Prototypes/RelayServerNugetTest/.vs/RelayServerNugetTest
+/Prototypes/RelayServerNugetTest/bin/Debug/net6.0
+/Prototypes/RelayServerNugetTest/obj
+/Prototypes/RelayServerTest/bin/Release/net6.0/Plugins/Services/NP.Grpc.RelayServer
+/Prototypes/SubscribingClientTest/bin
+/src/bin/Release/net6.0
