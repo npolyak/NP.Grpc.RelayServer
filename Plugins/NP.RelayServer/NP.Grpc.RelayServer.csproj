@@ -26,7 +26,7 @@
 	
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.0"/>
-		<PackageReference Include="NP.DependencyInjection" Version="1.0.6"/>
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.9"/>
 	</ItemGroup>
 	
 	<Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build">

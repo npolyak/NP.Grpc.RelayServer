@@ -12,7 +12,7 @@ namespace NP.TestTopics
     [HasRegisterMethods]
     public static class TopicsUtils
     {
-        [RegisterMethod(isSingleton:true, resolutionKey:IoCKeys.Topics)]
+        [RegisterMultiCellMethod(cellType:typeof(Enum), resolutionKey:IoCKeys.Topics)]
         public static IEnumerable<Enum> GetTopics()
         {
             return new Enum[] { TestTopics.PersonTopic };
