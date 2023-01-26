@@ -10,12 +10,28 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Plugins\NP.PersonTest\NP.PersonTest.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
-		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
-		<ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="System.Linq.Async" Version="6.0.1" />-->
 		<PackageReference Include="System.Reactive" Version="5.0.0" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.2" />
+		<PackageReference Include="NP.IoCy" Version="1.0.32" />
+
+		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.3" GeneratePathProperty="true">
+			<ExcludeAssets>All</ExcludeAssets>
+		</PackageReference>
 	</ItemGroup>
+
+	<ItemGroup>
+		<RelayClientFiles Include="$(PkgNP_Grpc_RelayClient)\lib\net6.0\**\*.*"/>
+	</ItemGroup>
+
+	<Target Name="CopyClientPluginFromNugetPackage" AfterTargets="Build">
+		<PropertyGroup>
+			<ClientPluginFolder>$(TargetDir)\Plugins\Services\NP.Grpc.RelayClient</ClientPluginFolder>
+		</PropertyGroup>
+		<RemoveDir Directories="$(ClientPluginFolder)"/>
+		<Copy SourceFiles="@(RelayClientFiles)"
+			  DestinationFolder="$(ClientPluginFolder)\%(RecursiveDir)"/>
+	</Target>
 </Project>
