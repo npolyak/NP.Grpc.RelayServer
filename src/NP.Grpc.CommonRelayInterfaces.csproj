@@ -2,27 +2,42 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
+		<PackageId>NP.Grpc.CommonRelayInterfaces</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.0.1</Version>
+		<Authors>Nick Polyak Ph. D.</Authors>
+		<Description>interfaces for Grpc Relay server and client</Description>
+		<Copyright>Nick Polyak 2023</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageTags>Relay, Server, Client</PackageTags>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<None Remove="*.nuspec" />
 		<None Remove="*.nupkg" />
 		<None Remove="*~" />
-		<None Remove="RelayService.proto" />
 	</ItemGroup>
+	
 	<ItemGroup>
-		<Protobuf Include="../src/RelayService.proto" GrpcServices="Both" ProtoRoot=".." />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
-	</ItemGroup>
-	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
 		<PackageReference Include="Grpc" Version="2.46.5" />
 		<PackageReference Include="Grpc.Tools" Version="2.51.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="..\NP.Grpc.RelayServiceProto\RelayService.proto" Link="RelayService.proto" GrpcServices="Both" ProtoRoot=".." />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='Debug'">
+		<ProjectReference Include="..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="NP.Protobuf" Version="1.0.4" />
 	</ItemGroup>
 </Project>

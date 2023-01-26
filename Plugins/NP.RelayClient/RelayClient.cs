@@ -2,10 +2,10 @@
 using Google.Protobuf;
 using Grpc.Core;
 using NP.Grpc.CommonRelayInterfaces;
-using NP.Protobuf;
 using NP.DependencyInjection.Attributes;
-using static NP.Grpc.CommonRelayInterfaces.RelayService;
 using System.Reactive.Linq;
+using static NP.Grpc.RelayServiceProto.RelayService;
+using NP.Grpc.RelayServiceProto;
 
 namespace NP.RelayServer;
 
@@ -38,7 +38,10 @@ public class RelayClient : IRelayClient
         return await _client.BroadcastAsync(broadcastMsg);
     }
 
-    public async IAsyncEnumerable<FullMsg> GetResponseStream(System.Enum topic)
+    public async IAsyncEnumerable<FullMsg>
+        GetResponseStream
+        (
+            System.Enum topic)
     {
         ShortMsg subscribeMsg = topic.ToShortMsg();
 
@@ -56,6 +59,7 @@ public class RelayClient : IRelayClient
     {
         return GetResponseStream(topic).ToObservable();
     }
+
 
     public IObservable<T> Subscribe<T>(System.Enum topic)
         where T : IMessage, new()

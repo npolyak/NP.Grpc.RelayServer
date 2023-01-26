@@ -44,3 +44,5 @@
 /Plugins/NP.PersonTest/bin/Release/net6.0
 /Plugins/NP.TestTopics/bin/Release/net6.0
 /Prototypes/RelayServerTest/bin/Release/net6.0
+/NP.Grpc.RelayServiceProto/bin/Debug
+/NP.Grpc.RelayServiceProto/obj

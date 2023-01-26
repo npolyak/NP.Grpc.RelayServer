@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.GrpcConfig", "..\..\Plug
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.IoCy", "..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj", "{4191D666-8729-486F-A0C4-317DACC2FCA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.Grpc.RelayServiceProto", "..\..\NP.Grpc.RelayServiceProto\NP.Grpc.RelayServiceProto.csproj", "{FD134F71-8A90-4778-AECF-145B123AAFE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{4191D666-8729-486F-A0C4-317DACC2FCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4191D666-8729-486F-A0C4-317DACC2FCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4191D666-8729-486F-A0C4-317DACC2FCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

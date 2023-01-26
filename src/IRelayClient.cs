@@ -1,6 +1,6 @@
-﻿using NP.Protobuf;
-using Google.Protobuf.WellKnownTypes;
+﻿using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
+using NP.Grpc.RelayServiceProto;
 
 namespace NP.Grpc.CommonRelayInterfaces;
 

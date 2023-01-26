@@ -1,7 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using NP.Grpc.CommonRelayInterfaces;
-using NP.Protobuf;
+using NP.Grpc.RelayServiceProto;
 using NP.Utilities;
 using System.Collections.Concurrent;
 

@@ -14,10 +14,15 @@
 	  <Protobuf Include="Person.proto" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<ItemGroup Condition="'$(Configuration)'=='Debug'">
 		<ProjectReference Include="..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
 		<ProjectReference Include="..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
 	</ItemGroup>
+	<ItemGroup Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.9"/>
+		<PackageReference Include="NP.Protobuf" Version="1.0.4"/>
+	</ItemGroup>
+
 
 	<ItemGroup>
 		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
