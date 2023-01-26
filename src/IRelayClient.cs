@@ -15,5 +15,5 @@ public interface IRelayClient
 
     Task<ShortMsg> PublishTopic(System.Enum topic, Any message);
 
-    Task<ShortMsg> PublishTopic<Message>(System.Enum topic, Message message);
+    Task<ShortMsg> Publish<Message>(System.Enum topic, Message message) where Message : IMessage;
 }

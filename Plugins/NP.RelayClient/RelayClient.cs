@@ -8,7 +8,7 @@ using static NP.Grpc.RelayServiceProto.RelayService;
 using NP.Grpc.RelayServiceProto;
 using System.Runtime.CompilerServices;
 
-namespace NP.RelayServer;
+namespace NP.Grpc.RelayClient;
 
 [RegisterType(isSingleton: true)]
 public class RelayClient : IRelayClient
@@ -39,7 +39,7 @@ public class RelayClient : IRelayClient
         return await _client.PublishTopicAsync(broadcastMsg);
     }
 
-    public async Task<ShortMsg> PublishTopic<Message>(System.Enum topic, Message message)
+    public async Task<ShortMsg> Publish<Message>(System.Enum topic, Message message)
         where Message : IMessage
     {
         return await PublishTopic(topic, Any.Pack(message));

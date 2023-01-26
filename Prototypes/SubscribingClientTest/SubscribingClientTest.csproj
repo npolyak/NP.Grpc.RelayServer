@@ -14,10 +14,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="System.Reactive" Version="5.0.0" />
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.2" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.3" />
 		<PackageReference Include="NP.IoCy" Version="1.0.32" />
 
-		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.3" GeneratePathProperty="true">
+		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.6" GeneratePathProperty="true">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
