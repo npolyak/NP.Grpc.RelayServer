@@ -34,7 +34,7 @@ internal class BroadcastServiceImplementation : RelayService.RelayServiceBase
         return topicSubs;
     }
 
-    public override async Task<ShortMsg> Broadcast(FullMsg request, ServerCallContext context)
+    public override async Task<ShortMsg> PublishTopic(FullMsg request, ServerCallContext context)
     {
         EnumValue requestTopic = request.Metadata.Topic;
 
@@ -53,7 +53,7 @@ internal class BroadcastServiceImplementation : RelayService.RelayServiceBase
         };
     }
 
-    public override async Task Subscribe
+    public override async Task GetTopicStream
     (
         ShortMsg request,
         IServerStreamWriter<FullMsg> responseStream,

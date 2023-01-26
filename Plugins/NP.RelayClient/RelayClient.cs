@@ -6,6 +6,7 @@ using NP.DependencyInjection.Attributes;
 using System.Reactive.Linq;
 using static NP.Grpc.RelayServiceProto.RelayService;
 using NP.Grpc.RelayServiceProto;
+using System.Runtime.CompilerServices;
 
 namespace NP.RelayServer;
 
@@ -27,7 +28,7 @@ public class RelayClient : IRelayClient
         _client = new RelayServiceClient(channel);
     }
 
-    public async Task<ShortMsg> Broadcast(System.Enum topic, Any message)
+    public async Task<ShortMsg> PublishTopic(System.Enum topic, Any message)
     {
         var broadcastMsg = new FullMsg
         {
@@ -35,19 +36,20 @@ public class RelayClient : IRelayClient
             Message = message
         };
 
-        return await _client.BroadcastAsync(broadcastMsg);
+        return await _client.PublishTopicAsync(broadcastMsg);
     }
 
     public async IAsyncEnumerable<FullMsg>
-        GetResponseStream
+        GetTopicStream
         (
-            System.Enum topic)
+            System.Enum topic, 
+            [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         ShortMsg subscribeMsg = topic.ToShortMsg();
 
-        using var replies = _client.Subscribe(subscribeMsg);
+        using var replies = _client.GetTopicStream(subscribeMsg, null, null, cancellationToken);
 
-        while (await replies.ResponseStream.MoveNext())
+        while (await replies.ResponseStream.MoveNext(cancellationToken))
         {
             var msg = replies.ResponseStream.Current;
 
@@ -55,15 +57,21 @@ public class RelayClient : IRelayClient
         }
     }
 
-    public IObservable<FullMsg> Subscribe(System.Enum topic)
+    public IObservable<FullMsg> ObserveTopicStream
+    (
+        System.Enum topic,
+        CancellationToken cancellationToken = default)
     {
-        return GetResponseStream(topic).ToObservable();
+        return GetTopicStream(topic, cancellationToken).ToObservable();
     }
 
 
-    public IObservable<T> Subscribe<T>(System.Enum topic)
+    public IObservable<T> ObserveTopicStream<T>
+    (
+        System.Enum topic, 
+        CancellationToken cancellationToken = default)
         where T : IMessage, new()
     {
-        return Subscribe(topic).Select(msg => msg.Message.Unpack<T>());
+        return ObserveTopicStream(topic, cancellationToken).Select(msg => msg.Message.Unpack<T>());
     }
 }

@@ -6,12 +6,12 @@ namespace NP.Grpc.CommonRelayInterfaces;
 
 public interface IRelayClient
 {
-    IAsyncEnumerable<FullMsg> GetResponseStream(System.Enum topic);
+    IAsyncEnumerable<FullMsg> GetTopicStream(System.Enum topic, CancellationToken cancellationToken = default);
 
-    IObservable<FullMsg> Subscribe(System.Enum topic);
+    IObservable<FullMsg> ObserveTopicStream(System.Enum topic, CancellationToken cancellationToken = default);
 
-    IObservable<T> Subscribe<T>(System.Enum topic)
+    IObservable<T> ObserveTopicStream<T>(System.Enum topic, CancellationToken cancellationToken = default)
         where T : IMessage, new();
 
-    Task<ShortMsg> Broadcast(System.Enum topic, Any message);
+    Task<ShortMsg> PublishTopic(System.Enum topic, Any message);
 }

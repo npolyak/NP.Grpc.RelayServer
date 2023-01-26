@@ -21,7 +21,7 @@ namespace SimpleBroadcastSubscriptionTest
 
             IRelayClient relayClient = container.Resolve<IRelayClient>();
 
-            relayClient.Broadcast(TestTopics.PersonTopic, Any.Pack(new Person { Name = "Joe", Age = 25 }));
+            relayClient.PublishTopic(TestTopics.PersonTopic, Any.Pack(new Person { Name = "Joe", Age = 25 }));
 
             Console.ReadLine();
         }

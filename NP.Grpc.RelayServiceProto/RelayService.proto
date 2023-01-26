@@ -9,8 +9,8 @@ package nP.grpc.relayServiceProto;
 
 service RelayService
 {
-	rpc Subscribe(ShortMsg) returns (stream FullMsg) {}
-	rpc Broadcast(FullMsg) returns (ShortMsg) {}
+	rpc GetTopicStream(ShortMsg) returns (stream FullMsg) {}
+	rpc PublishTopic(FullMsg) returns (ShortMsg) {}
 }
 
 message ShortMsg
