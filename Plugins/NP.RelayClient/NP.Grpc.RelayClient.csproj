@@ -4,7 +4,15 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<PackageId>NP.Grpc.RelayClient</PackageId>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.0.3</Version>
+		<Authors>Nick Polyak Ph. D.</Authors>
+		<Description>Relay client implementation plugin</Description>
+		<Copyright>Nick Polyak 2023</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,7 +33,14 @@
 		<PackageReference Include="System.Linq.Async" Version="6.0.1" />
 		<PackageReference Include="System.Reactive" Version="5.0.0" />
 	</ItemGroup>
-
+	<Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build">
+		<ItemGroup>
+			<None Include="$(TargetDir)\**">
+				<Pack>true</Pack>
+				<PackagePath>lib/net6.0</PackagePath>
+			</None>
+		</ItemGroup>
+	</Target>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\BroadcastClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
 		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
