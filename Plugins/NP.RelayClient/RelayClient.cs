@@ -39,6 +39,12 @@ public class RelayClient : IRelayClient
         return await _client.PublishTopicAsync(broadcastMsg);
     }
 
+    public async Task<ShortMsg> PublishTopic<Message>(System.Enum topic, Message message)
+        where Message : IMessage
+    {
+        return await PublishTopic(topic, Any.Pack(message));
+    }
+
     public async IAsyncEnumerable<FullMsg>
         GetTopicStream
         (
