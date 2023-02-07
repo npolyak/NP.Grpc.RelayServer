@@ -44,8 +44,4 @@
 			</None>
 		</ItemGroup>
 	</Target>
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Debug'">
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\BroadcastClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
-	</Target>
 </Project>

@@ -50,3 +50,7 @@
 *.user
 /NP.Grpc.RelayServiceProto/bin/Release
 /Prototypes/PythonClients/PythonPersonStub/__pycache__
+/Plugins/NP.Grpc.RelayClient/bin
+/Plugins/NP.Grpc.RelayClient/obj
+/Plugins/NP.Grpc.RelayServer/bin
+/Plugins/NP.Grpc.RelayServer/obj

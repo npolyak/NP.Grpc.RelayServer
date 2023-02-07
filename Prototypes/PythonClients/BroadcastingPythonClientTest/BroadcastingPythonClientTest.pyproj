@@ -2,13 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>33fb43e3-13ab-45dc-8f39-ffaaa5a4be87</ProjectGuid>
+    <ProjectGuid>5d662c45-d5a3-4ebb-9fbd-a66bf600a690</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SubscribingPythonClientTest.py</StartupFile>
+    <StartupFile>BroadcastingPythonClientTest.py</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>SubscribingPythonClientTest</Name>
-    <RootNamespace>SubscribingPythonClientTest</RootNamespace>
+    <Name>BroadcastingPythonClientTest</Name>
+    <RootNamespace>BroadcastingPythonClientTest</RootNamespace>
+    <SearchPath>
+    </SearchPath>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -20,17 +22,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="SubscribingPythonClientTest.py" />
+    <Compile Include="BroadcastingPythonClientTest.py" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\NP.Grpc.PythonRelayInterfaces\NP.Grpc.PythonRelayInterfaces.pyproj">
       <Name>NP.Grpc.PythonRelayInterfaces</Name>
       <Project>{f631530f-1c9b-4639-9746-50b05d35b2c8}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\PythonPersonStub\PythonPersonStub.pyproj">
-      <Name>PythonPersonStub</Name>
-      <Project>{591117dd-a776-4526-a351-8196c6f98d04}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

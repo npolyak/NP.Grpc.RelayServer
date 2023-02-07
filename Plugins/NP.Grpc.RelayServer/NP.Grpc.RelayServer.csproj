@@ -29,18 +29,15 @@
 		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.5"/>
 		<PackageReference Include="NP.DependencyInjection" Version="1.0.9"/>
 	</ItemGroup>
-	<Target Name="ClearTarget" BeforeTargets="Build">
+	<Target Name="ClearTarget" BeforeTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<RemoveDir Directories="$(TargetDir)\**" />
 	</Target>
-	<Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build">
+	<Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<ItemGroup>
 			<None Include="$(TargetDir)\**">
 				<Pack>true</Pack>
 				<PackagePath>lib/net6.0</PackagePath>
 			</None>
 		</ItemGroup>
-	</Target>
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent"  Condition="'$(Configuration)'=='Debug'">
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
 	</Target>
 </Project>

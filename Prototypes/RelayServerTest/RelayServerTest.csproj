@@ -9,14 +9,16 @@
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
 		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
-		<ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
+		<ProjectReference Include="..\..\Plugins\NP.Grpc.RelayServer\NP.Grpc.RelayServer.csproj" />
+		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
+		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.5" />
+	<ItemGroup>
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.5" Condition="'$(Configuration)'=='Release'"/>
 		<PackageReference Include="NP.IoCy" Version="1.0.32" />
 
-		<PackageReference Include="NP.Grpc.RelayServer" Version="1.0.7" GeneratePathProperty="true">
+		<PackageReference Include="NP.Grpc.RelayServer" Version="1.0.7" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
@@ -25,7 +27,7 @@
 		<RelayServerFiles Include="$(PkgNP_Grpc_RelayServer)\lib\net6.0\**\*.*"/>
 	</ItemGroup>
 
-	<Target Name="CopyServerPluginFromNugetPackage" AfterTargets="Build">
+	<Target Name="CopyServerPluginFromNugetPackage" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<PropertyGroup>
 			<ServerPluginFolder>$(TargetDir)\Plugins\Services\NP.Grpc.RelayServer</ServerPluginFolder>
 		</PropertyGroup>
