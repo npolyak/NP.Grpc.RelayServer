@@ -46,3 +46,7 @@
 /Prototypes/RelayServerTest/bin/Release/net6.0
 /NP.Grpc.RelayServiceProto/bin/Debug
 /NP.Grpc.RelayServiceProto/obj
+/NP.Grpc.PythonRelayInterfaces/__pycache__
+*.user
+/NP.Grpc.RelayServiceProto/bin/Release
+/Prototypes/PythonClients/PythonPersonStub/__pycache__

@@ -37,7 +37,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.GrpcConfig", "..\..\Plug
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.IoCy", "..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj", "{4191D666-8729-486F-A0C4-317DACC2FCA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.Grpc.RelayServiceProto", "..\..\NP.Grpc.RelayServiceProto\NP.Grpc.RelayServiceProto.csproj", "{FD134F71-8A90-4778-AECF-145B123AAFE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Grpc.RelayServiceProto", "..\..\NP.Grpc.RelayServiceProto\NP.Grpc.RelayServiceProto.csproj", "{FD134F71-8A90-4778-AECF-145B123AAFE2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "NP.Grpc.PythonRelayInterfaces", "..\..\NP.Grpc.PythonRelayInterfaces\NP.Grpc.PythonRelayInterfaces.pyproj", "{F631530F-1C9B-4639-9746-50B05D35B2C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PythonClients", "PythonClients", "{5F799AFF-AAA6-47DC-81C8-E3F8343FBBD2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SubscribingPythonClientTest", "..\PythonClients\SubscribingPythonClientTest\SubscribingPythonClientTest.pyproj", "{33FB43E3-13AB-45DC-8F39-FFAAA5A4BE87}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonPersonStub", "..\PythonClients\PythonPersonStub\PythonPersonStub.pyproj", "{591117DD-A776-4526-A351-8196C6F98D04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +113,12 @@ Global
 		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD134F71-8A90-4778-AECF-145B123AAFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F631530F-1C9B-4639-9746-50B05D35B2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F631530F-1C9B-4639-9746-50B05D35B2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FB43E3-13AB-45DC-8F39-FFAAA5A4BE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FB43E3-13AB-45DC-8F39-FFAAA5A4BE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591117DD-A776-4526-A351-8196C6F98D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591117DD-A776-4526-A351-8196C6F98D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +137,9 @@ Global
 		{47080AF7-13A6-4298-ADFF-71731BDB9319} = {0A98C109-F5F7-408B-A6E9-846EA33770F6}
 		{AD968CAE-C020-42A6-9A14-291AB6DB1BB3} = {0A98C109-F5F7-408B-A6E9-846EA33770F6}
 		{4191D666-8729-486F-A0C4-317DACC2FCA0} = {71518F80-1C51-4341-BBC0-70DC1F1940C2}
+		{5F799AFF-AAA6-47DC-81C8-E3F8343FBBD2} = {8B65CC8C-559F-47B5-9A32-22AE626EC7A5}
+		{33FB43E3-13AB-45DC-8F39-FFAAA5A4BE87} = {5F799AFF-AAA6-47DC-81C8-E3F8343FBBD2}
+		{591117DD-A776-4526-A351-8196C6F98D04} = {5F799AFF-AAA6-47DC-81C8-E3F8343FBBD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37ABF9A8-F933-42EC-9440-EFA31273624C}

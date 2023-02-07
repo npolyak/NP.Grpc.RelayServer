@@ -8,6 +8,9 @@
 
 	<ItemGroup>
 	  <None Remove="Person.proto" />
+	  <None Remove="Person_pb2.py" />
+	  <None Remove="Person_pb2.pyi" />
+	  <None Remove="Person_pb2_grpc.py" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -19,8 +22,8 @@
 		<ProjectReference Include="..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.DependencyInjection" Version="1.0.9"/>
-		<PackageReference Include="NP.Protobuf" Version="1.0.4"/>
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.9" />
+		<PackageReference Include="NP.Protobuf" Version="1.0.4" />
 	</ItemGroup>
 
 

@@ -1,0 +1,48 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>33fb43e3-13ab-45dc-8f39-ffaaa5a4be87</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>SubscribingPythonClientTest.py</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>SubscribingPythonClientTest</Name>
+    <RootNamespace>SubscribingPythonClientTest</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="SubscribingPythonClientTest.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\NP.Grpc.PythonRelayInterfaces\NP.Grpc.PythonRelayInterfaces.pyproj">
+      <Name>NP.Grpc.PythonRelayInterfaces</Name>
+      <Project>{f631530f-1c9b-4639-9746-50b05d35b2c8}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\PythonPersonStub\PythonPersonStub.pyproj">
+      <Name>PythonPersonStub</Name>
+      <Project>{591117dd-a776-4526-a351-8196c6f98d04}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
