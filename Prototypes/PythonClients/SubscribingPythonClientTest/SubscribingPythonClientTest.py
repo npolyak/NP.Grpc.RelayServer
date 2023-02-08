@@ -11,10 +11,12 @@ def print_msg(msg:FullMsg):
     if msg.message.Unpack(p) == True:
         print(p.Name)
 
-observable = observingClient.get_observable();
+#observable = observingClient.get_observable();
 
-observable.subscribe(on_next=print_msg)
+#observable.subscribe(on_next=print_msg)
 
+person_observable = observingClient.get_concrete_observable(lambda:Person())
 
+person_observable.subscribe(on_next = lambda p:print("\n" + p.Name))
 
 input("Press enter to close program!!!!!!!!!!!\n\n")

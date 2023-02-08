@@ -1,15 +1,17 @@
 # import python packages
 import asyncio
+from re import T
 import grpc
 import reactivex
+from typing import TypeVar
 
 # import the client stubs (service_pb2 contains messages, 
 # service_pb2_grpc contains RPCs)
 import RelayService_pb2 as relay_service
-import RelayService_pb2_grpc as relay_service_grpc
-from google.protobuf import type_pb2 as proto_types
-from google.protobuf import timestamp_pb2
 from RelayClientBase import RelayClientBase
+from google.protobuf import message
+from google.protobuf import any_pb2
+import reactivex.operators as ops
 
 class ObservingRelayClient(RelayClientBase):
     async def __observe_topic_async_impl__(self, t_name:str, t_number:int) -> None:
@@ -42,3 +44,10 @@ class ObservingRelayClient(RelayClientBase):
     def get_observable(self) -> reactivex.Observable[relay_service.FullMsg]:
         return self._observable;
 
+    T = TypeVar("T", bound=message.Message)
+    def get_concrete_observable(self, create_T_method) -> reactivex.Observable[T]:
+        def get_T(msg:relay_service.FullMsg) -> T:
+            t = create_T_method();
+            msg.message.Unpack(t);
+            return t;
+        return self._observable.pipe(ops.map(lambda t : get_T(t)))
