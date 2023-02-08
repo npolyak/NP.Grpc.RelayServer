@@ -10,6 +10,7 @@
     <Name>SubscribingPythonClientTest</Name>
     <RootNamespace>SubscribingPythonClientTest</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <SearchPath>..\PythonPersonStub</SearchPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

@@ -54,3 +54,4 @@
 /Plugins/NP.Grpc.RelayClient/obj
 /Plugins/NP.Grpc.RelayServer/bin
 /Plugins/NP.Grpc.RelayServer/obj
+/Prototypes/PythonClients/BroadcastingPythonClientTest/__pycache__

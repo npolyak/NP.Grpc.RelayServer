@@ -21,7 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BroadcastingRelayClient.py" />
     <Compile Include="ObservingRelayClient.py" />
+    <Compile Include="RelayClientBase.py" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NP.Grpc.RelayServiceProto\NP.Grpc.RelayServiceProto.csproj">

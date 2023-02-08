@@ -9,8 +9,7 @@
     <OutputPath>.</OutputPath>
     <Name>BroadcastingPythonClientTest</Name>
     <RootNamespace>BroadcastingPythonClientTest</RootNamespace>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>..\PythonPersonStub</SearchPath>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

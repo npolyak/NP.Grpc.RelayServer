@@ -1,9 +1,10 @@
 from RelayService_pb2 import FullMsg
-from ObservingRelayClient import ObservingRelayClient
+from BroadcastingRelayClient import BroadcastingRelayClient
 from Person_pb2 import Person
+
 from google.protobuf import any_pb2
 
-broadcastingClient = ObservingRelayClient("localhost", 5051)
+broadcastingClient = BroadcastingRelayClient("localhost", 5051)
 
 broadcastingClient.connect_if_needed()
 
