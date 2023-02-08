@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BroadcastingRelayClient.py" />
+    <Content Include="LICENSE">
+      <Publish>True</Publish>
+    </Content>
     <Compile Include="ObservingRelayClient.py" />
     <Compile Include="RelayClientBase.py" />
   </ItemGroup>
