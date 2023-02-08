@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>NP.Grpc.PythonRelayInterfaces</Name>
     <RootNamespace>NP.Grpc.PythonRelayInterfaces</RootNamespace>
+    <PublishUrl>.</PublishUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

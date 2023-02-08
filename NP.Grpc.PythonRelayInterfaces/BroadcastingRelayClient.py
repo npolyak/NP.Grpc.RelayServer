@@ -1,3 +1,7 @@
+# (c) Nick Polyak 2023
+# License: MIT License (https://opensource.org/licenses/MIT)
+
+
 # import the client stubs (service_pb2 contains messages, 
 # service_pb2_grpc contains RPCs)
 import RelayService_pb2 as relay_service

@@ -1,3 +1,6 @@
+# (c) Nick Polyak 2023
+# License: MIT License (https://opensource.org/licenses/MIT)
+
 from RelayService_pb2 import FullMsg
 from BroadcastingRelayClient import BroadcastingRelayClient
 from Person_pb2 import Person

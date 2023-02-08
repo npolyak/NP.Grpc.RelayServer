@@ -1,3 +1,6 @@
+# (c) Nick Polyak 2023
+# License: MIT License (https://opensource.org/licenses/MIT)
+
 # import python packages
 import asyncio
 import concurrent.futures
