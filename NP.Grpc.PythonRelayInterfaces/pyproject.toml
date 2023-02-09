@@ -1,6 +1,6 @@
 [project]
 name = "NP.Grpc.PythonRelayInterfaces"
-version = "0.99.1"
+version = "0.99.2"
 authors = [
   { name="Nick Polya, Ph.D.", email="nick.polyak@verizon.net" }
 ]

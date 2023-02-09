@@ -19,6 +19,6 @@ class BroadcastingRelayClient(RelayClientBase):
     def broadcast_object(self, item:message.Message, topic_name:str, topic_number:int) -> relay_service.ShortMsg:
         a = any_pb2.Any()
         a.Pack(item)
-        metadata = self.create_short_msg(topic_name="PersonTopic", topic_number=1)
+        metadata = self.create_short_msg(topic_name=topic_name, topic_number=topic_number)
         msg = relay_service.FullMsg(metadata = metadata, message = a)
         return self.broadcast(msg)
