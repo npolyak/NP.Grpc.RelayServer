@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
-		<ProjectReference Include="..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
+		<ProjectReference Include="$(SolutionDir)\..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
