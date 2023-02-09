@@ -26,7 +26,7 @@
     <Content Include="LICENSE">
       <Publish>True</Publish>
     </Content>
-    <Content Include="NP.Grpc.PythonRelayInterfaces.toml" />
+    <Content Include="pyproject.toml" />
     <Content Include="src\RelayService_pb2.pyi" />
   </ItemGroup>
   <ItemGroup>

@@ -56,3 +56,8 @@
 /Plugins/NP.Grpc.RelayServer/obj
 /Prototypes/PythonClients/BroadcastingPythonClientTest/__pycache__
 /NP.Grpc.PythonRelayInterfaces/src/__pycache__
+/NP.Grpc.PythonRelayInterfaces/dist
+/NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/top_level.txt
+/NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/SOURCES.txt
+/NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/PKG-INFO
+/NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/dependency_links.txt
