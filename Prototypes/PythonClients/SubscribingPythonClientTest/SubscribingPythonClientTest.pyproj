@@ -10,8 +10,7 @@
     <Name>SubscribingPythonClientTest</Name>
     <RootNamespace>SubscribingPythonClientTest</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>..\..\..\NP.Grpc.PythonRelayInterfaces\src;..\PythonPersonStub</SearchPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,18 +22,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="SubscribingPythonClientTest.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\NP.Grpc.PythonRelayInterfaces\NP.Grpc.PythonRelayInterfaces.pyproj">
-      <Name>NP.Grpc.PythonRelayInterfaces</Name>
-      <Project>{f631530f-1c9b-4639-9746-50b05d35b2c8}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\PythonPersonStub\PythonPersonStub.pyproj">
-      <Name>PythonPersonStub</Name>
-      <Project>{591117dd-a776-4526-a351-8196c6f98d04}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />

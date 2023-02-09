@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f631530f-1c9b-4639-9746-50b05d35b2c8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ObservingRelayClient.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,12 +23,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BroadcastingRelayClient.py" />
     <Content Include="LICENSE">
       <Publish>True</Publish>
     </Content>
-    <Compile Include="ObservingRelayClient.py" />
-    <Compile Include="RelayClientBase.py" />
+    <Content Include="NP.Grpc.PythonRelayInterfaces.toml" />
+    <Content Include="src\RelayService_pb2.pyi" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NP.Grpc.RelayServiceProto\NP.Grpc.RelayServiceProto.csproj">
@@ -39,6 +39,16 @@
   <ItemGroup>
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\BroadcastingRelayClient.py" />
+    <Compile Include="src\ObservingRelayClient.py" />
+    <Compile Include="src\RelayClientBase.py" />
+    <Compile Include="src\RelayService_pb2.py" />
+    <Compile Include="src\RelayService_pb2_grpc.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

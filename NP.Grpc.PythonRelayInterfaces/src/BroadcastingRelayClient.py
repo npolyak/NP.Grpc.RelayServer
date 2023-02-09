@@ -22,4 +22,3 @@ class BroadcastingRelayClient(RelayClientBase):
         metadata = self.create_short_msg(topic_name="PersonTopic", topic_number=1)
         msg = relay_service.FullMsg(metadata = metadata, message = a)
         return self.broadcast(msg)
-
