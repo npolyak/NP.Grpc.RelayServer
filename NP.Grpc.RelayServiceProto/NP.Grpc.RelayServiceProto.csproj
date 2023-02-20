@@ -16,5 +16,6 @@
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="GenerateProto.txt" />
+		<Content Include="RelayService.proto" />
 	</ItemGroup>
 </Project>
