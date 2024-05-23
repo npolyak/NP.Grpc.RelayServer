@@ -61,3 +61,8 @@
 /NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/SOURCES.txt
 /NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/PKG-INFO
 /NP.Grpc.PythonRelayInterfaces/src/NP.Grpc.PythonRelayInterfaces.egg-info/dependency_links.txt
+/Plugins/NP.GrpcConfig/bin
+/Plugins/NP.PersonTest/bin/Release/net8.0
+/Plugins/NP.TestTopics/bin
+/Prototypes/RelayServerTest/bin
+/src/bin

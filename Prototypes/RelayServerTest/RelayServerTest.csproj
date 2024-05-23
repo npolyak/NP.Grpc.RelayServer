@@ -2,9 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
@@ -24,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<RelayServerFiles Include="$(PkgNP_Grpc_RelayServer)\lib\net6.0\**\*.*"/>
+		<RelayServerFiles Include="$(PkgNP_Grpc_RelayServer)\lib\$(TargetFramework)\**\*.*"/>
 	</ItemGroup>
 
 	<Target Name="CopyServerPluginFromNugetPackage" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">

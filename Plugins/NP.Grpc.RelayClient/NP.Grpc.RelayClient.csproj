@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
 		<PackageId>NP.Grpc.RelayClient</PackageId>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.6</Version>
+		<Version>1.0.7</Version>
 		<Authors>Nick Polyak Ph. D.</Authors>
 		<Description>Relay client implementation plugin</Description>
 		<Copyright>Nick Polyak 2023</Copyright>
@@ -25,13 +23,13 @@
 		<ProjectReference Include="$(SolutionDir)\..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.5" />
-		<PackageReference Include="NP.DependencyInjection" Version="1.0.9" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.6" />
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="System.Linq.Async" Version="6.0.1" />
-		<PackageReference Include="System.Reactive" Version="5.0.0" />
+		<PackageReference Include="System.Reactive" Version="6.0.1" />
 	</ItemGroup>
 	<Target Name="ClearTarget" BeforeTargets="Build">
 		<RemoveDir Directories="$(TargetDir)\**" />
@@ -40,7 +38,7 @@
 		<ItemGroup>
 			<None Include="$(TargetDir)\**">
 				<Pack>true</Pack>
-				<PackagePath>lib/net6.0</PackagePath>
+				<PackagePath>lib/net8.0</PackagePath>
 			</None>
 		</ItemGroup>
 	</Target>

@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
@@ -11,12 +9,12 @@
 		<ProjectReference Include="..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.DependencyInjection" Version="1.0.9"/>
-		<PackageReference Include="NP.Protobuf" Version="1.0.4"/>
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
+		<PackageReference Include="NP.Protobuf" Version="1.0.5" />
 	</ItemGroup>
 
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
 	</Target>
 </Project>

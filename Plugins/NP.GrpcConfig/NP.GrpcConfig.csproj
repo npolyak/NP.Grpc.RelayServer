@@ -1,14 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\BroadcastClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\net6.0\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\BroadcastClientTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
 	</Target>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
@@ -17,8 +15,8 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.2" />
-		<PackageReference Include="NP.DependencyInjection" Version="1.0.9" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.6" />
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
 	</ItemGroup>
 
 </Project>

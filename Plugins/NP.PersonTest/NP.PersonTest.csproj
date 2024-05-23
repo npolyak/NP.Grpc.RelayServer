@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -22,14 +20,13 @@
 		<ProjectReference Include="..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.DependencyInjection" Version="1.0.9" />
-		<PackageReference Include="NP.Protobuf" Version="1.0.4" />
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
+		<PackageReference Include="NP.Protobuf" Version="1.0.5" />
 	</ItemGroup>
 
 
 	<ItemGroup>
-		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
-		<PackageReference Include="Grpc.Tools" Version="2.51.0">
+		<PackageReference Include="Grpc.Tools" Version="2.64.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
