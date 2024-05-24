@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.6" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.7" />
 		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
 	</ItemGroup>
 

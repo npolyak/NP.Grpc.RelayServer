@@ -13,14 +13,17 @@
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
 		<ProjectReference Include="..\..\Plugins\NP.Grpc.RelayClient\NP.Grpc.RelayClient.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
-		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
 	</ItemGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.6" Condition="'$(Configuration)'=='Release'" />
-		<PackageReference Include="NP.IoCy" Version="1.0.34" />
 
-		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.7" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
+	<ItemGroup>
+		<PackageReference Include="NP.IoCy"
+						  Version="1.0.34" />
+		<PackageReference Include="NP.Grpc.ClientRelayInterfaces"
+						  Version="1.0.0" />
+		<PackageReference Include="NP.Grpc.RelayClient"
+						  Version="1.0.9"
+						  GeneratePathProperty="true"
+						  Condition="'$(Configuration)'=='Release'">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
@@ -28,12 +31,15 @@
 	<ItemGroup>
 		<RelayClientFiles Include="$(PkgNP_Grpc_RelayClient)\lib\$(TargetFramework)\**\*.*" />
 	</ItemGroup>
- 
-	<Target Name="CopyClientPluginFromNugetPackage" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
+
+	<Target Name="CopyClientPluginFromNugetPackage"
+			AfterTargets="Build"
+			Condition="'$(Configuration)'=='Release'">
 		<PropertyGroup>
 			<ClientPluginFolder>$(TargetDir)\Plugins\Services\NP.Grpc.RelayClient</ClientPluginFolder>
 		</PropertyGroup>
 		<RemoveDir Directories="$(ClientPluginFolder)" />
-		<Copy SourceFiles="@(RelayClientFiles)" DestinationFolder="$(ClientPluginFolder)\%(RecursiveDir)" />
+		<Copy SourceFiles="@(RelayClientFiles)"
+			  DestinationFolder="$(ClientPluginFolder)\%(RecursiveDir)" />
 	</Target>
 </Project>

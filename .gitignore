@@ -66,3 +66,8 @@
 /Plugins/NP.TestTopics/bin
 /Prototypes/RelayServerTest/bin
 /src/bin
+/NP.Grpc.ClientRelayInterfaces/obj
+/NP.Grpc.ClientRelayInterfaces/bin/Release/net8.0
+/NP.Grpc.ServerRelayInterfaces/bin
+/NP.Grpc.ServerRelayInterfaces/obj
+/Plugins/NP.PersonTest/bin/Debug/net8.0

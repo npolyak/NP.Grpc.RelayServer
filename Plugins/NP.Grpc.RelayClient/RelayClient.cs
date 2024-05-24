@@ -13,6 +13,7 @@ using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
 using Grpc.Core;
 using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.ClientRelayInterfaces;
 using NP.DependencyInjection.Attributes;
 using System.Reactive.Linq;
 using static NP.Grpc.RelayServiceProto.RelayService;

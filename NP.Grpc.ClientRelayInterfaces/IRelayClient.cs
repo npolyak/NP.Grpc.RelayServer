@@ -13,7 +13,7 @@ using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
 using NP.Grpc.RelayServiceProto;
 
-namespace NP.Grpc.CommonRelayInterfaces;
+namespace NP.Grpc.ClientRelayInterfaces;
 
 public interface IRelayClient
 {

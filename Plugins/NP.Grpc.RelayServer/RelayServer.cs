@@ -12,6 +12,7 @@
 using Grpc.Core;
 using NP.DependencyInjection.Attributes;
 using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.ServerRelayInterfaces;
 using NP.Grpc.RelayServiceProto;
 using NP.Protobuf;
 

@@ -10,7 +10,7 @@
 // products that use it.
 
 using Google.Protobuf.WellKnownTypes;
-using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.ClientRelayInterfaces;
 #if DEBUG
 using NP.Grpc.RelayClient;
 using NP.GrpcConfig;

@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<PackageId>NP.Grpc.CommonRelayInterfaces</PackageId>
+		<PackageId>NP.Grpc.ClientRelayInterfaces</PackageId>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.6</Version>
+		<Version>1.0.7</Version>
 		<Authors>Nick Polyak Ph. D.</Authors>
 		<Description>interfaces for Grpc Relay server and client</Description>
 		<Copyright>Nick Polyak 2023</Copyright>
@@ -16,26 +16,5 @@
 		<None Remove="*.nuspec" />
 		<None Remove="*.nupkg" />
 		<None Remove="*~" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Google.Protobuf" Version="3.26.1" />
-		<PackageReference Include="Grpc" Version="2.46.6" />
-		<PackageReference Include="Grpc.Tools" Version="2.64.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Protobuf Include="..\NP.Grpc.RelayServiceProto\RelayService.proto" Link="RelayService.proto" GrpcServices="Both" ProtoRoot=".." />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(Configuration)'=='Debug'">
-		<ProjectReference Include="$(SolutionDir)..\..\SubModules\NP.Protobuf\src\NP.Protobuf.csproj" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Protobuf" Version="1.0.5" />
 	</ItemGroup>
 </Project>

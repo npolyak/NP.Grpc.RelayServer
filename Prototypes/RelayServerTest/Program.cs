@@ -1,4 +1,4 @@
-﻿using NP.Grpc.CommonRelayInterfaces;
+﻿using NP.Grpc.ServerRelayInterfaces;
 #if DEBUG
 using NP.Grpc.RelayServer;
 using NP.GrpcConfig;
