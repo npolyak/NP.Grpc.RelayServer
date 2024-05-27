@@ -30,7 +30,7 @@ namespace NP.Grpc.RelayServer
             [Inject(resolutionKey: IoCKeys.Topics)] IEnumerable<Enum> topics
         )
         {
-            BroadcastServiceImplementation serverImpl = new BroadcastServiceImplementation();
+            RelayServiceImplementation serverImpl = new RelayServiceImplementation();
             serverImpl.RegisterTopics(topics.ToArray());
 
             _server = new Server()

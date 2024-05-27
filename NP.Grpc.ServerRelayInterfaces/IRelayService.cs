@@ -9,9 +9,16 @@
 // Also, please, mention this software in any documentation for the 
 // products that use it.
 
+using Grpc.Core;
+using NP.Grpc.RelayServiceProto;
+
 namespace NP.Grpc.ServerRelayInterfaces;
 
-public interface IRelayServer
+public interface IRelayService
 {
-    Task Shutdown();
+    Task<ShortMsg> PublishTopic(FullMsg request, ServerCallContext context);
+
+    Task GetTopicStream(ShortMsg request, IServerStreamWriter<FullMsg> responseStream, ServerCallContext context);
+
+    void RegisterTopics(params Enum[] topics);
 }

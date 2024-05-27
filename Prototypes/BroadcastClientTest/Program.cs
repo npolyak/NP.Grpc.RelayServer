@@ -11,8 +11,11 @@
 
 using Google.Protobuf.WellKnownTypes;
 using NP.Grpc.ClientRelayInterfaces;
+using NP.Grpc.CommonRelayInterfaces;
+
 #if DEBUG
 using NP.Grpc.RelayClient;
+using NP.Grpc.RelayServiceProto;
 using NP.GrpcConfig;
 #endif
 using NP.IoCy;
@@ -24,14 +27,13 @@ namespace SimpleBroadcastSubscriptionTest
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Publishing C# Client");
 
             var containerBuilder = new ContainerBuilder<System.Enum>();
 
             containerBuilder.RegisterMultiCell(typeof(System.Enum), IoCKeys.Topics);
-
 
 #if DEBUG
             containerBuilder.RegisterSingletonType<IGrpcConfig, GrpcConfig>();
@@ -43,9 +45,14 @@ namespace SimpleBroadcastSubscriptionTest
 
             IRelayClient relayClient = container.Resolve<IRelayClient>();
 
-            relayClient.PublishTopic(TestTopics.PersonTopic, Any.Pack(new Person { Name = "Joe", Age = 25 }));
+            try
+            {
+                ShortMsg msg = await relayClient.PublishTopic(TestTopics.PersonTopic, Any.Pack(new Person { Name = "Joe", Age = 25 }));
+            }
+            catch (Exception ex)
+            {
 
-            Console.ReadLine();
+            }
         }
     }
 }

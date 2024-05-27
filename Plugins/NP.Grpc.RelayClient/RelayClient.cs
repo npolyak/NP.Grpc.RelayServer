@@ -19,6 +19,7 @@ using System.Reactive.Linq;
 using static NP.Grpc.RelayServiceProto.RelayService;
 using NP.Grpc.RelayServiceProto;
 using System.Runtime.CompilerServices;
+using Grpc.Net.Client;
 
 namespace NP.Grpc.RelayClient;
 
@@ -30,12 +31,8 @@ public class RelayClient : IRelayClient
     [CompositeConstructor]
     public RelayClient([Inject] IGrpcConfig configParams)
     {
-        Channel channel =
-            new Channel
-            (
-                configParams.ServerName, 
-                configParams.Port, 
-                ChannelCredentials.Insecure);
+        GrpcChannel channel =
+            GrpcChannel.ForAddress($"https://{configParams.ServerName}:{configParams.Port}");
 
         _client = new RelayServiceClient(channel);
     }

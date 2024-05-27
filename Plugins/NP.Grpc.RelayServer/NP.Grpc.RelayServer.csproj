@@ -18,6 +18,10 @@
 		<None Remove="*~" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Remove="RelayServer.cs" />
+	</ItemGroup>
+
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
 		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
 		<ProjectReference Include="..\..\NP.Grpc.ServerRelayInterfaces\NP.Grpc.ServerRelayInterfaces.csproj" />
@@ -25,21 +29,14 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces"
-						  Version="1.0.7" />
-		<PackageReference Include="NP.Grpc.ServerRelayInterfaces"
-						  Version="1.0.0" />
-		<PackageReference Include="NP.DependencyInjection"
-						  Version="1.0.10" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.7" />
+		<PackageReference Include="NP.Grpc.ServerRelayInterfaces" Version="1.0.0" />
+		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
 	</ItemGroup>
-	<Target Name="ClearTarget"
-			BeforeTargets="Build"
-			Condition="'$(Configuration)'=='Release'">
+	<Target Name="ClearTarget" BeforeTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<RemoveDir Directories="$(TargetDir)\**" />
 	</Target>
-	<Target Name="IncludeAllFilesInTargetDir"
-			AfterTargets="Build"
-			Condition="'$(Configuration)'=='Release'">
+	<Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<ItemGroup>
 			<None Include="$(TargetDir)\**">
 				<Pack>true</Pack>

@@ -11,11 +11,14 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
+		<ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
+		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
+		<ProjectReference Include="..\..\NP.Grpc.ClientRelayInterfaces\NP.Grpc.ClientRelayInterfaces.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.Grpc.RelayClient\NP.Grpc.RelayClient.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<PackageReference Include="System.Reactive"
 						  Version="6.0.1" />
 		<PackageReference Include="NP.IoCy"

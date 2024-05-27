@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -6,20 +6,17 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
+		<ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
+		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.Grpc.RelayServer\NP.Grpc.RelayServer.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="NP.IoCy"
-						  Version="1.0.34" />
-		<PackageReference Include="NP.Grpc.ServerRelayInterfaces"
-						  Version="1.0.0" />
-		<PackageReference Include="NP.Grpc.RelayServer"
-						  Version="1.0.9"
-						  GeneratePathProperty="true"
-						  Condition="'$(Configuration)'=='Release'">
+	<ItemGroup Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="NP.IoCy" Version="1.0.34" />
+		<PackageReference Include="NP.Grpc.ServerRelayInterfaces" Version="1.0.0" />
+		<PackageReference Include="NP.Grpc.RelayServer" Version="1.0.9" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
@@ -28,14 +25,15 @@
 		<RelayServerFiles Include="$(PkgNP_Grpc_RelayServer)\lib\$(TargetFramework)\**\*.*" />
 	</ItemGroup>
 
-	<Target Name="CopyServerPluginFromNugetPackage"
-			AfterTargets="Build"
-			Condition="'$(Configuration)'=='Release'">
+	<ItemGroup>
+	  <PackageReference Include="Grpc.AspNetCore" Version="2.63.0" />
+	</ItemGroup>
+
+	<Target Name="CopyServerPluginFromNugetPackage" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<PropertyGroup>
 			<ServerPluginFolder>$(TargetDir)\Plugins\Services\NP.Grpc.RelayServer</ServerPluginFolder>
 		</PropertyGroup>
 		<RemoveDir Directories="$(ServerPluginFolder)" />
-		<Copy SourceFiles="@(RelayServerFiles)"
-			  DestinationFolder="$(ServerPluginFolder)\%(RecursiveDir)" />
+		<Copy SourceFiles="@(RelayServerFiles)" DestinationFolder="$(ServerPluginFolder)\%(RecursiveDir)" />
 	</Target>
 </Project>

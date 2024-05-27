@@ -11,6 +11,8 @@
 
 using Grpc.Core;
 using NP.Grpc.ClientRelayInterfaces;
+using NP.Grpc.CommonRelayInterfaces;
+
 #if DEBUG
 using NP.Grpc.RelayClient;
 using NP.GrpcConfig;

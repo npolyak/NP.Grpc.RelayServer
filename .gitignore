@@ -71,3 +71,4 @@
 /NP.Grpc.ServerRelayInterfaces/bin
 /NP.Grpc.ServerRelayInterfaces/obj
 /Plugins/NP.PersonTest/bin/Debug/net8.0
+/NP.Grpc.ClientRelayInterfaces/bin/Debug/net8.0
