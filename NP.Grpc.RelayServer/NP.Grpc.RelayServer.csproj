@@ -19,29 +19,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="RelayServer.cs" />
+		<PackageReference Include="Google.Protobuf" Version="3.26.1" />
+		<PackageReference Include="Grpc.Core.Api" Version="2.63.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.64.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
-		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
-		<ProjectReference Include="..\..\NP.Grpc.ServerRelayInterfaces\NP.Grpc.ServerRelayInterfaces.csproj" />
 		<ProjectReference Include="$(SolutionDir)\..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
+		<ProjectReference Include="..\SubModules\NP.Utilities\src\NP.Utilities.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.7" />
-		<PackageReference Include="NP.Grpc.ServerRelayInterfaces" Version="1.0.0" />
+		<PackageReference Include="NP.Utilities"
+						  Version="1.0.7" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces"
+						  Version="1.0.23" />
 		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
 	</ItemGroup>
-	<Target Name="ClearTarget" BeforeTargets="Build" Condition="'$(Configuration)'=='Release'">
-		<RemoveDir Directories="$(TargetDir)\**" />
-	</Target>
-	<Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
-		<ItemGroup>
-			<None Include="$(TargetDir)\**">
-				<Pack>true</Pack>
-				<PackagePath>lib/net8.0</PackagePath>
-			</None>
-		</ItemGroup>
-	</Target>
+
+	<ItemGroup>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="..\NP.Grpc.RelayServiceProto\RelayService.proto" Link="RelayService.proto" GrpcServices="Server" />
+	</ItemGroup>
 </Project>

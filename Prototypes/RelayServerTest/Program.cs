@@ -1,5 +1,4 @@
-﻿using NP.Grpc.ServerRelayInterfaces;
-#if DEBUG
+﻿#if DEBUG
 using NP.Grpc.RelayServer;
 using NP.GrpcConfig;
 using NP.TestTopics;
@@ -15,7 +14,6 @@ namespace SimpleBroadcastSubscriptionTest
         static async Task Main(string[] args)
         {
             Console.WriteLine("Relay Server");
-
 
             var containerBuilder = new ContainerBuilder<Enum>();
 

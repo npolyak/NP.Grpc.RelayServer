@@ -12,7 +12,6 @@
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using NP.Grpc.RelayServiceProto;
-using NP.Grpc.ServerRelayInterfaces;
 using NP.Utilities;
 using System.Collections.Concurrent;
 
@@ -20,7 +19,7 @@ using Enum = System.Enum;
 
 namespace NP.Grpc.RelayServer;
 
-public class RelayServiceImplementation : RelayService.RelayServiceBase, IRelayService
+public class RelayServiceImplementation : RelayService.RelayServiceBase
 {
     private ConcurrentDictionary<Enum, TopicSubscriptions> _topics =
         new ConcurrentDictionary<Enum, TopicSubscriptions>();
