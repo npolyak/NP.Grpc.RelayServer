@@ -27,9 +27,11 @@ message ShortMsg
 {    
 	google.protobuf.Timestamp msgSentTime = 1;
 
+	string errorMessage = 2;
+
 	google.protobuf.EnumValue topic = 3;
 
-	string errorMessage = 4;
+	string room = 4;
 }
 
 message FullMsg
