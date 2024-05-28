@@ -10,7 +10,7 @@
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
-		<PackageReference Include="NP.Protobuf" Version="1.0.5" />
+		<PackageReference Include="NP.Protobuf" Version="1.0.7" />
 	</ItemGroup>
 
 

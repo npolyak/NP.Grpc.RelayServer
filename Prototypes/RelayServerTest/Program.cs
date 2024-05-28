@@ -1,13 +1,11 @@
-﻿#if DEBUG
-using NP.Grpc.RelayServer;
+﻿using NP.Grpc.RelayServer;
 using NP.GrpcConfig;
 using NP.TestTopics;
-#endif
 using NP.IoCy;
 using NP.Protobuf;
 using NP.Grpc.CommonRelayInterfaces;
 
-namespace SimpleBroadcastSubscriptionTest
+namespace RelayServerTest
 {
     internal class Program
     {
@@ -18,13 +16,11 @@ namespace SimpleBroadcastSubscriptionTest
             var containerBuilder = new ContainerBuilder<Enum>();
 
             containerBuilder.RegisterMultiCell(typeof(Enum), IoCKeys.Topics);
-#if DEBUG
+
             containerBuilder.RegisterSingletonType<IGrpcConfig, GrpcConfig>();
             containerBuilder.RegisterSingletonType<RelayServiceImplementation, RelayServiceImplementation>();
             containerBuilder.RegisterAttributedStaticFactoryMethodsFromClass(typeof(TopicsUtils));
-#else
-            containerBuilder.RegisterPluginsFromSubFolders("Plugins/Services");
-#endif
+
             var container = containerBuilder.Build();
 
             RelayServiceImplementation relayService = container.Resolve<RelayServiceImplementation>();

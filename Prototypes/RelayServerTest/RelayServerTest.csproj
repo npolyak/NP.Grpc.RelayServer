@@ -9,13 +9,13 @@
 		<ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
 		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
 		<ProjectReference Include="..\..\NP.Grpc.RelayServer\NP.Grpc.RelayServer.csproj" />
-		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
-		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<PackageReference Include="NP.IoCy" Version="1.0.34" />
-		<PackageReference Include="NP.Grpc.RelayServer" Version="1.0.9"/>
+		<PackageReference Include="NP.Grpc.RelayServer" Version="1.0.11" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces"
+						  Version="1.0.7" />
 	</ItemGroup>
 
 	<!--<ItemGroup>
@@ -23,7 +23,9 @@
 	</ItemGroup>-->
 
 	<ItemGroup>
-	  <PackageReference Include="Grpc.AspNetCore" Version="2.63.0" />
+		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
+		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.63.0" />
 	</ItemGroup>
 
 	<!--<Target Name="CopyServerPluginFromNugetPackage" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">

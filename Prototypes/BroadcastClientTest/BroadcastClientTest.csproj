@@ -20,8 +20,10 @@
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<PackageReference Include="NP.IoCy" Version="1.0.34" />
-		<PackageReference Include="NP.Grpc.ClientRelayInterfaces" Version="1.0.0" />
-		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.9" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="NP.Grpc.ClientRelayInterfaces" Version="1.0.1" />
+		<PackageReference Include="NP.Grpc.CommonRelayInterfaces"
+						  Version="1.0.7" />
+		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.10" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>

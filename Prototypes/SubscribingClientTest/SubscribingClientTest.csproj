@@ -8,6 +8,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Plugins\NP.PersonTest\NP.PersonTest.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
+		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
@@ -15,21 +16,14 @@
 		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
 		<ProjectReference Include="..\..\NP.Grpc.ClientRelayInterfaces\NP.Grpc.ClientRelayInterfaces.csproj" />
 		<ProjectReference Include="..\..\Plugins\NP.Grpc.RelayClient\NP.Grpc.RelayClient.csproj" />
-		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="System.Reactive"
-						  Version="6.0.1" />
-		<PackageReference Include="NP.IoCy"
-						  Version="1.0.34" />
+		<PackageReference Include="System.Reactive" Version="6.0.1" />
+		<PackageReference Include="NP.IoCy" Version="1.0.34" />
 
-		<PackageReference Include="NP.Grpc.ClientRelayInterfaces"
-						  Version="1.0.0" />
-		<PackageReference Include="NP.Grpc.RelayClient"
-						  Version="1.0.9"
-						  GeneratePathProperty="true"
-						  Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="NP.Grpc.ClientRelayInterfaces" Version="1.0.1" />
+		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.10" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>
@@ -38,14 +32,11 @@
 		<RelayClientFiles Include="$(PkgNP_Grpc_RelayClient)\lib\$(TargetFramework)\**\*.*" />
 	</ItemGroup>
 
-	<Target Name="CopyClientPluginFromNugetPackage"
-			AfterTargets="Build"
-			Condition="'$(Configuration)'=='Release'">
+	<Target Name="CopyClientPluginFromNugetPackage" AfterTargets="Build" Condition="'$(Configuration)'=='Release'">
 		<PropertyGroup>
 			<ClientPluginFolder>$(TargetDir)\Plugins\Services\NP.Grpc.RelayClient</ClientPluginFolder>
 		</PropertyGroup>
 		<RemoveDir Directories="$(ClientPluginFolder)" />
-		<Copy SourceFiles="@(RelayClientFiles)"
-			  DestinationFolder="$(ClientPluginFolder)\%(RecursiveDir)" />
+		<Copy SourceFiles="@(RelayClientFiles)" DestinationFolder="$(ClientPluginFolder)\%(RecursiveDir)" />
 	</Target>
 </Project>
