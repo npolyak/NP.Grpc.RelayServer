@@ -3,7 +3,7 @@ using NP.GrpcConfig;
 using NP.TestTopics;
 using NP.IoCy;
 using NP.Protobuf;
-using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.CommonRelayApi;
 
 namespace RelayServerTest
 {

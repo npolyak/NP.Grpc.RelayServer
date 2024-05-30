@@ -11,7 +11,7 @@
 
 using Google.Protobuf.WellKnownTypes;
 using NP.Grpc.ClientRelayApi;
-using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.CommonRelayApi;
 using NP.Grpc.RelayServiceProto;
 
 #if DEBUG

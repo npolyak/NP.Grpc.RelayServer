@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Protobuf", "..\..\SubMod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Utilities", "..\..\SubModules\NP.Utilities\src\NP.Utilities.csproj", "{18F32FF2-FC29-4B47-8E64-8D7197462038}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Grpc.CommonRelayInterfaces", "..\..\src\NP.Grpc.CommonRelayInterfaces.csproj", "{CB48D89B-F26F-45CA-87E0-2D9CFA32958A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Grpc.CommonRelayApi", "..\..\src\NP.Grpc.CommonRelayApi.csproj", "{CB48D89B-F26F-45CA-87E0-2D9CFA32958A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{0A98C109-F5F7-408B-A6E9-846EA33770F6}"
 EndProject

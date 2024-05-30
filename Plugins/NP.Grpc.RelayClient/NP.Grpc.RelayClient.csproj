@@ -5,7 +5,7 @@
 		<PackageId>NP.Grpc.RelayClient</PackageId>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.11</Version>
+		<Version>1.0.12</Version>
 		<Authors>Nick Polyak Ph. D.</Authors>
 		<Description>Relay client implementation plugin</Description>
 		<Copyright>Nick Polyak 2023</Copyright>
@@ -19,12 +19,12 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
-		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
+		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayApi.csproj" />
 		<ProjectReference Include="..\..\NP.Grpc.ClientRelayApi\NP.Grpc.ClientRelayApi.csproj" />
 		<ProjectReference Include="$(SolutionDir)\..\..\SubModules\NP.DependencyInjection\src\NP.DependencyInjection.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces" Version="1.0.7" />
+		<PackageReference Include="NP.Grpc.CommonRelayApi" Version="1.0.0" />
 		<PackageReference Include="NP.Grpc.ClientRelayApi" Version="1.0.1" />
 		<PackageReference Include="NP.DependencyInjection" Version="1.0.10" />
 	</ItemGroup>

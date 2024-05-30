@@ -10,7 +10,7 @@
 // products that use it.
 
 using NP.DependencyInjection.Attributes;
-using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.CommonRelayApi;
 
 namespace NP.GrpcConfig
 {

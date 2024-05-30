@@ -12,7 +12,7 @@
 using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
 using Grpc.Core;
-using NP.Grpc.CommonRelayInterfaces;
+using NP.Grpc.CommonRelayApi;
 using NP.Grpc.ClientRelayApi;
 using NP.DependencyInjection.Attributes;
 using System.Reactive.Linq;

@@ -7,15 +7,15 @@
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
 		<ProjectReference Include="..\..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
-		<ProjectReference Include="..\..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
+		<ProjectReference Include="..\..\..\src\NP.Grpc.CommonRelayApi.csproj" />
 		<ProjectReference Include="..\..\..\NP.Grpc.RelayServer\NP.Grpc.RelayServer.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
 		<PackageReference Include="NP.IoCy" Version="1.0.34" />
 		<PackageReference Include="NP.Grpc.RelayServer" Version="1.0.11" />
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces"
-						  Version="1.0.7" />
+		<PackageReference Include="NP.Grpc.CommonRelayApi"
+						  Version="1.0.0" />
 	</ItemGroup>
 
 	<!--<ItemGroup>
