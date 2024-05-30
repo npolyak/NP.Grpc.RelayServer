@@ -78,3 +78,14 @@
 /Prototypes/RelayTests/RelayServerTest/.vs
 /Prototypes/RelayTests/RelayServerTest/bin/Debug/net8.0
 /Prototypes/RelayTests/RelayServerTest/obj
+/NP.Grpc.ClientRelayApi/bin
+/NP.Grpc.ClientRelayApi/obj
+/Prototypes/RelayTests/.vs/ProjectEvaluation
+/Prototypes/RelayTests/bin/Release/net8.0/Plugins/Services
+/Prototypes/RelayTests/PublishClientTest/bin
+/Prototypes/RelayTests/PublishClientTest/obj
+/Prototypes/RelayTests/RelayServerTest/bin/Release/net8.0
+/Prototypes/RelayTests/SubscrClientTest/bin
+/Prototypes/RelayTests/SubscrClientTest/obj
+/Prototypes/RelayTests/SubscribingClientTest/bin/Release/net8.0/Plugins/Services/NP.GrpcConfig
+/Prototypes/PublishClientTest/bin/Release/net8.0/Plugins/Services/NP.GrpcConfig

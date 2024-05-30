@@ -10,7 +10,7 @@
 // products that use it.
 
 using Grpc.Core;
-using NP.Grpc.ClientRelayInterfaces;
+using NP.Grpc.ClientRelayApi;
 using NP.Grpc.CommonRelayInterfaces;
 
 #if DEBUG

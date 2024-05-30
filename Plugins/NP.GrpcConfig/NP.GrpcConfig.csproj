@@ -4,9 +4,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\PublishClientTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
-		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\..\SubscribingClientTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\RelayServerTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\PublishClientTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
+		<Exec Command="xcopy &quot;$(OutDir)&quot; &quot;$(SolutionDir)\SubscrClientTest\bin\$(Configuration)\$(TargetFramework)\Plugins\Services\$(ProjectName)\&quot; /S /R /Y /I" />
 	</Target>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">

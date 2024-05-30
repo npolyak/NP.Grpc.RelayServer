@@ -13,7 +13,7 @@ using Google.Protobuf.WellKnownTypes;
 using NP.Grpc.RelayServiceProto;
 using NP.Protobuf;
 
-namespace NP.Grpc.ClientRelayInterfaces
+namespace NP.Grpc.ClientRelayApi
 {
     public static class MessageHelper
     {

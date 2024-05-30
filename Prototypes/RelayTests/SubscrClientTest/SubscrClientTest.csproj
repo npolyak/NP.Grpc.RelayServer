@@ -6,24 +6,24 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Plugins\NP.PersonTest\NP.PersonTest.csproj" />
-		<ProjectReference Include="..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
+		<ProjectReference Include="..\..\..\Plugins\NP.PersonTest\NP.PersonTest.csproj" />
+		<ProjectReference Include="..\..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj" />
+		<ProjectReference Include="..\..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug'">
-		<ProjectReference Include="..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
-		<ProjectReference Include="..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
-		<ProjectReference Include="..\..\NP.Grpc.ClientRelayInterfaces\NP.Grpc.ClientRelayInterfaces.csproj" />
-		<ProjectReference Include="..\..\Plugins\NP.Grpc.RelayClient\NP.Grpc.RelayClient.csproj" />
-		<ProjectReference Include="..\..\Plugins\NP.GrpcConfig\NP.GrpcConfig.csproj" />
+		<ProjectReference Include="..\..\..\SubModules\NP.IoCy\src\NP.IoCy.csproj" />
+		<ProjectReference Include="..\..\..\src\NP.Grpc.CommonRelayInterfaces.csproj" />
+		<ProjectReference Include="..\..\..\NP.Grpc.ClientRelayApi\NP.Grpc.ClientRelayApi.csproj" />
+		<ProjectReference Include="..\..\..\Plugins\NP.Grpc.RelayClient\NP.Grpc.RelayClient.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Release'">
+		<PackageReference Include="System.Reactive" Version="6.0.1" />
 		<PackageReference Include="NP.IoCy" Version="1.0.34" />
-		<PackageReference Include="NP.Grpc.ClientRelayInterfaces" Version="1.0.1" />
-		<PackageReference Include="NP.Grpc.CommonRelayInterfaces"
-						  Version="1.0.7" />
-		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.10" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
+
+		<PackageReference Include="NP.Grpc.ClientRelayApi" Version="1.0.1" />
+		<PackageReference Include="NP.Grpc.RelayClient" Version="1.0.11" GeneratePathProperty="true" Condition="'$(Configuration)'=='Release'">
 			<ExcludeAssets>All</ExcludeAssets>
 		</PackageReference>
 	</ItemGroup>

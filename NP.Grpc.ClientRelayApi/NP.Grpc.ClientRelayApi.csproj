@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<PackageId>NP.Grpc.ClientRelayInterfaces</PackageId>
+		<PackageId>NP.Grpc.ClientRelayApi</PackageId>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Version>1.0.1</Version>
 		<Authors>Nick Polyak Ph. D.</Authors>
