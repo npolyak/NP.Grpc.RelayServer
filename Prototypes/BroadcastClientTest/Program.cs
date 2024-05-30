@@ -14,10 +14,8 @@ using NP.Grpc.ClientRelayInterfaces;
 using NP.Grpc.CommonRelayInterfaces;
 using NP.Grpc.RelayServiceProto;
 
-
 #if DEBUG
 using NP.Grpc.RelayClient;
-using NP.Grpc.RelayServiceProto;
 using NP.GrpcConfig;
 #endif
 using NP.IoCy;
@@ -25,7 +23,7 @@ using NP.PersonTest;
 using NP.Protobuf;
 using NP.TestTopics;
 
-namespace SimpleBroadcastSubscriptionTest
+namespace PublishClientTest
 {
     internal class Program
     {

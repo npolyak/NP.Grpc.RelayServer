@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{0A98
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.TestTopics", "..\..\Plugins\NP.TestTopics\NP.TestTopics.csproj", "{E3F4467D-7950-497F-827B-AD0CCE1D19A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BroadcastClientTest", "..\BroadcastClientTest\BroadcastClientTest.csproj", "{E19AA650-FCC7-4375-B3B7-878DA7242CF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublishClientTest", "..\BroadcastClientTest\PublishClientTest.csproj", "{E19AA650-FCC7-4375-B3B7-878DA7242CF7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubscribingClientTest", "..\SubscribingClientTest\SubscribingClientTest.csproj", "{46622D69-6E8C-4A73-9169-3AF63605C06B}"
 EndProject
